@@ -31,17 +31,16 @@ const Category = ({ data, pageContext }) => {
   const { edges } = data.allGoogleSheetListRow;
   return (
     <Layout>
-      <Helmet title={'Uncommon Shops : ' + categoryHeading} />
-      <Header title="Uncommon Shops">an ever-growing list of exceptional independent brands & retailers</Header>
+      <Helmet title={'WatchWatch : ' + categoryHeading} />
+      <Header title={categoryHeading}></Header>
       <CategoryHeading>{categoryHeading}</CategoryHeading>
       <CategoryWrapper>
         {edges.map(({ node }) => (
           <ShopList
             key={node.name}
             cover={node.localImageUrl && node.localImageUrl.childImageSharp && node.localImageUrl.childImageSharp.fluid}
-            path={`/shops/${node.name}`}
+            path={`/${node.name}`}
             title={node.name}
-            date={node.date}
             tags={node.tags && node.tags.split(',')}
             excerpt={node.about && node.about.substring(0,40)+"..."}
           />
@@ -58,28 +57,19 @@ export const query = graphql`
     allGoogleSheetListRow(filter: {category: {eq: $category}}) {
       edges {
         node {
+          id
           name
-          url
           category
           tags
-          about
-          country
-          state
+          url
           city
-          localImageUrl {
-            childImageSharp {
-              fluid(
-                maxWidth: 1000
-                quality: 100
-                traceSVG: { color: "#2B2B2F" }
-              ) {
-                ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              }
-            }
-          }
-          imageurl
+          state
+          url
+          about
+          slug
         }
       }
+
     }
   }
 `;

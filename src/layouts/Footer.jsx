@@ -28,14 +28,14 @@ const Footer = () => (
     <Text>
       <div>
 
-        <img src={logo} width="200px" alt="uncommonry - discover & shop indepdent retailers & brands" />
-        <div>💌<Link to="/submit_shop"> submit an uncommon business</Link><br/>
-          🛒<Link to="/about"> about </Link> <br/>
-        ⚒ by <a href="https://ecomloop.com" target="_blank">ecomloop</a> in 🥑 california</div>
+
+        <div>💌<Link to="/contact"> contact </Link> |
+          <Link to="/about"> about </Link> <br/>
+        <p class="madeby">⚒ by <a href="https://ecomloop.com" target="_blank">ecomloop</a></p></div>
 
       </div>
     </Text>
-    <div className="cui-embed" data-cui-uid="e7T54e" data-cui-mode="pill" data-cui-pill-button-color="#0000FF"></div>
+    <div className="cui-embed" data-cui-uid="" data-cui-mode="pill" data-cui-pill-button-color="#0000FF"></div>
   </Wrapper>
 );
 export default Footer;

@@ -6,7 +6,7 @@ import logo from '../../static/logo/header-logo.png';
 import Search from '../components/search'
 
 const searchIndices = [
-  { name: `uncommonry`, title: `Shops`, type: `shopHit` },
+  { name: `watchwatch`, title: `search`, type: `hit` },
 ]
 
 const StyledLink = styled(Link)`
@@ -145,12 +145,12 @@ const NavBar = () => {
   return (
     <Headroom calcHeightOnResize disableInlineStyles>
       <StyledLink to="/">
-        <img src={logo} alt="uncommonry - discover & shop indepdent retailers & brands" />
+        <img src="" alt="WatchWatch.org" />
       </StyledLink>
       <NavWrapper>
         <Nav>
           <div className="dropdown">
-            <Link to="/shops">Discover </Link>
+            <Link to="/list">view </Link>
             <div className="dropdown-content">
               {uniqueCategoriesMap.map((item) => (
                 <Link key={item.url} to={`/category/${item.url}`} > {item.text}</Link>

@@ -6,11 +6,11 @@ import { Layout, Container } from 'layouts';
 
 const SuccessPage = () => (
   <Layout>
-    <Helmet title={'Thanks for your submission'} />
-    <Header title="Thanks for your submission">🧐 Discover exceptional retailers & innovative brands<br/>🛒 Shop direct to support independent businesses</Header>
+    <Helmet title={'thanks for contacting'} />
+    <Header title="Thanks for your contacting"></Header>
     <Container center={{center:"true"}}>
     <h3>Thanks for your submission!</h3>
-    <p>We will email you once we've had a chance to manually review your submission.</p>
+    <p>We will follow up if needed.</p>
     </Container>
   </Layout>
 );

@@ -8,6 +8,8 @@ const shopQuery = `{
         date
         tags
         about
+        state
+        city
       }
     }
   }
@@ -17,12 +19,12 @@ const flatten = arr =>
     ...frontmatter,
     ...rest,
   }))
-const settings = { attributesToSnippet: [`excerpt:20`] }
+const settings = { attributesToSnippet: [`excerpt:10`] }
 const queries = [
   {
     query: shopQuery,
     transformer: ({ data }) => flatten(data.shops.edges),
-    indexName: `uncommonry`,
+    indexName: `watchwatch`,
     settings,
   },
 ]

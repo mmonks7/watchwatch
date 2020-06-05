@@ -46,74 +46,51 @@ const ShopWrapper = styled.div`
 const Index = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   const rowEdges = data.allGoogleSheetListRow.edges;
-  const foodEdges = [];
-  const homeEdges = [];
+  const listEdges = [];
   const maxItems = 9;
 
   const searchIndices = [
-    { name: `uncommonry`, title: `Shops`, type: `shopHit` },
+    { name: `watchwatch`, title: `Shops`, type: `shopHit` },
   ]
 
   //filtering home and food items maximum to 6 items
   rowEdges.map((edge) => {
-    if(edge.node.category && edge.node.category != "" && foodEdges.length<maxItems) {
-      foodEdges.push(edge);
-    }
-    else if(edge.node.category && edge.node.category == " " && homeEdges.length<maxItems) {
-      homeEdges.push(edge);
+    if(edge.node.category && edge.node.category != "" && listEdges.length<maxItems) {
+      listEdges.push(edge);
     }
 
   })
 
   return (
     <Layout>
-      <Helmet title={'uncommonry'} />
-      <Header title="Discover & Shop Independent Businesses"></Header>
+      <Helmet title={'WatchWatch.org'} />
+      <Header title="documenting unnceessary police violence"></Header>
 
-      {/* <p class="center"><a href ="/randomshop" class="button button">Discover a  shop</a></p> */}
+
       <div class="center">
-      🧐 Discover exceptional retailers & innovative brands<br/>🛒 Shop direct to support independent businesses
-      </div>
-<div class="search_main">
-      <Search collapse homepage indices={searchIndices} />
 
       </div>
+      <div class="search_main">
+            <Search collapse homepage indices={searchIndices} />
+
+            </div>
 
       <ShopSectionHeading></ShopSectionHeading>
 
       <ShopWrapper>
 
-        {foodEdges.map(({ node }) => {
+        {listEdges.map(({ node }) => {
           return (
             <PostList
               key={node.name}
               cover={node.localImageUrl && node.localImageUrl.childImageSharp.fluid}
-              path={`/shops/${node.slug}`}
+              path={`/${node.slug}`}
               title={node.name}
               excerpt={node.about && node.about.substring(0,40)+"..."}
             />
           );
         })}
       </ShopWrapper>
-
-
-      <ShopWrapper>
-        {homeEdges.map(({ node }) => {
-          return (
-            <PostList
-              key={node.name}
-              cover={node.localImageUrl && node.localImageUrl.childImageSharp.fluid}
-              path={`/shops/${node.slug}`}
-              title={node.name}
-              excerpt={node.about.substring(0,40)+"..."}
-            />
-          );
-        })}
-      </ShopWrapper>
-
-
-
-
 
     </Layout>
   );
@@ -146,7 +123,7 @@ export const query = graphql`
   query {
     allMarkdownRemark(
       limit: 9
-      sort: { order: ASC, fields: [frontmatter___date] }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       edges {
         node {
@@ -173,7 +150,10 @@ export const query = graphql`
       }
     }
 
-    allGoogleSheetListRow {
+    allGoogleSheetListRow(
+      limit: 90
+    )
+    {
       edges {
         node {
           name
@@ -182,7 +162,6 @@ export const query = graphql`
           category
           tags
           about
-          country
           state
           city
           localImageUrl {

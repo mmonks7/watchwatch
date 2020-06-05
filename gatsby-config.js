@@ -4,10 +4,11 @@ require("dotenv").config();
 
 module.exports = {
   siteMetadata: {
-    title: "uncommonry",
-    description: "🧐 Discover exceptional retailers & innovative brands<br/>🛒 Shop direct to support independent businesses",
+    title: "WatchWatch.org",
+    description: "police violence videos",
     ...config,
   },
+
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
@@ -17,6 +18,17 @@ module.exports = {
         name: 'posts',
         path: `${__dirname}/content/posts`,
       },
+    },
+    'gatsby-plugin-react-helmet',
+    {
+    resolve: '@fs/gatsby-plugin-drive',
+    options: {
+      folderId: '1zniqs5KlQJffey_FOHDlb-Ghy0Hikl_w',
+      keyFile: `${__dirname}/client_secret.json`,
+      destination: `${__dirname}/content/media`,
+      exportGDocs: false,
+      exportMimeType: ''
+      }
     },
     'gatsby-transformer-sharp',
     {
@@ -31,6 +43,7 @@ module.exports = {
               linkImagesToOriginal: true,
             },
           },
+
           'gatsby-remark-prismjs',
         ],
       },
@@ -38,10 +51,17 @@ module.exports = {
     {
     resolve: 'gatsby-source-google-sheets',
     options: {
-        spreadsheetId: '12a1r2I6v3cJgmCZjJ9Yu86lw_aD69fhlM6HYqGn13jM',
+        spreadsheetId: '1BlveympsddBWRld-ulhh6EH7pUT635HgvM0Jk3GlSoY',
         worksheetTitle: 'list',
-        credentials: require(`${__dirname}/client_secret.json`,)
-    }
+        credentials: require(`${__dirname}/client_secret.json`,),
+        plugins: [
+          {
+            resolve: 'gatsby-plugin-twitter',
+          }
+        ]
+      }
+    
+
     },
     {
       resolve: `gatsby-plugin-remote-images`,
@@ -67,15 +87,6 @@ module.exports = {
     },
     'gatsby-plugin-sharp',
     'gatsby-plugin-sitemap',
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries,
-        chunkSize: 10000, // default: 1000
-      },
-    },
     `gatsby-plugin-styled-components`,
     {
       resolve: 'gatsby-plugin-manifest',
