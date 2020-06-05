@@ -4,9 +4,9 @@ import theme from '../../config/theme';
 const prism = css`
   p > code,
   li > code {
-    color: #f8f8f2;
-    background: #131316;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    color: white;
+    background: #999;
+    font-family: 'Anonymous Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
     word-spacing: normal;
     word-break: normal;
@@ -21,9 +21,9 @@ const prism = css`
   }
   code[class*='language-'],
   pre[class*='language-'] {
-    color: #f8f8f2;
+    color: #999;
     background: none;
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-family: 'Anonymous Pro', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;
     word-spacing: normal;
     word-break: normal;

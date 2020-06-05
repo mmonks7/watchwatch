@@ -11,13 +11,14 @@ const headroom = css`
   .css-14za4wp.eqxxxtn1, .css-woc7hc.eqxxxtn0 {
     display: none;
 }
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@400;700&display=swap');
 
 p.center {
     text-align: center;
     margin: 25px;
 }
 
-  a{ color: #6f6add;}
+  a{ color: #fee12b;}
   a.button{
     display:inline-block;
     padding:0.7em 1.4em;
@@ -26,9 +27,9 @@ p.center {
     box-sizing: border-box;
     text-decoration:none;
     text-transform:uppercase;
-    font-weight:400;
-    color:#FFFFFF;
-    background-color:#6f6add;
+    font-weight:700;
+    color:#333;
+    background-color:#fee12b;
     box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
     text-align:center;
     position:relative;

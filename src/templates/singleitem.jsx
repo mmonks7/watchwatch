@@ -11,7 +11,7 @@ const SuggestionBar = styled.div`
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  background: ${props => props.theme.colors.white.light};
+  background: ${props => props.theme.colors.white.dark};
   box-shadow: ${props => props.theme.shadow.suggestion};
 `;
 const PostSuggestion = styled.div`
@@ -90,7 +90,7 @@ const SingleItem = ({ data, pageContext }) => {
 
 
 
-      
+
         <a target="_blank" href={url} className="button">View on Twitter</a> <a href="/random" className="button buttonalt">See another incident</a>
 
       </Container>

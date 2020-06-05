@@ -5,6 +5,7 @@ export const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.45,
   headerFontFamily: [
+    'Anonymous Pro',
     'Gibson',
     'Segoe UI',
     'Roboto',
@@ -17,6 +18,7 @@ export const typography = new Typography({
     'sans-serif',
   ],
   bodyFontFamily: [
+    'Anonymous Pro',
     'Consolas',
     'Open Sans',
     '-apple-system',

@@ -1,23 +1,23 @@
 export const colors = {
   white: {
-    base: '#fff',
+    base: '#33333',
     light: '#f0f0f0',
-    grey: '#cecece',
-    dark: '#a0afd7',
+    grey: '#666',
+    dark: '#999',
   },
   black: {
-    base: '#333438',
-    light: '#4b4e57',
-    blue: '#6f6add',
+    base: '#999',
+    light: '#333',
+    blue: '#ff781f',
   },
   primary: {
-    base: '#6f6add',
-    light: '#3e5fbc',
-    dark: '#284187',
+    base: '#666',
+    light: '#333',
+    dark: '#999',
   },
   background: {
-    light: '#deddff',
-    dark: '#6f6add',
+    light: '#333',
+    dark: '#666',
   },
 };
 
@@ -67,9 +67,9 @@ export const theme = {
   },
   fontFamily: {
     // eslint-disable-next-line
-    body: `Consolas,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+    body: `'Anonymous Pro',Consolas,-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
     // eslint-disable-next-line
-    heading: `'Gibson', 'Segoe UI', Roboto, Helvetica, -apple-system, BlinkMacSystemFont, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
+    heading: `'Anonymous Pro','Gibson', 'Segoe UI', Roboto, Helvetica, -apple-system, BlinkMacSystemFont, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'`,
   },
   layout: {
     article: '46rem',

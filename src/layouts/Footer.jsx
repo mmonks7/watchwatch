@@ -29,9 +29,9 @@ const Footer = () => (
       <div>
 
 
-        <div>💌<Link to="/contact"> contact </Link> |
+        <div><Link to="/contact"> contact </Link> |
           <Link to="/about"> about </Link> <br/>
-        <p class="madeby">⚒ by <a href="https://ecomloop.com" target="_blank">ecomloop</a></p></div>
+        <p class="madeby"><a href="https://ecomloop.com" target="_blank">built in california</a></p></div>
 
       </div>
     </Text>

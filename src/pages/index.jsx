@@ -64,7 +64,7 @@ const Index = ({ data }) => {
   return (
     <Layout>
       <Helmet title={'WatchWatch.org'} />
-      <Header title="documenting unnceessary police violence"></Header>
+      <Header title="documenting unnecessary police violence"></Header>
 
 
       <div class="center">
