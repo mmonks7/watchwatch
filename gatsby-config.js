@@ -8,17 +8,7 @@ module.exports = {
     description: "documenting unnecessary police violence",
     ...config,
   },
-  'gatsby-plugin-react-helmet',
-  {
-  resolve: '@fs/gatsby-plugin-drive',
-  options: {
-    folderId: '1zniqs5KlQJffey_FOHDlb-Ghy0Hikl_w',
-    keyFile: `${__dirname}/client_secret.json`,
-    destination: `${__dirname}/content/media`,
-    exportGDocs: false,
-    exportMimeType: ''
-    }
-  },
+
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-catch-links',
@@ -29,7 +19,17 @@ module.exports = {
         path: `${__dirname}/content/posts`,
       },
     },
-
+    'gatsby-plugin-react-helmet',
+    {
+    resolve: '@fs/gatsby-plugin-drive',
+    options: {
+      folderId: '1zniqs5KlQJffey_FOHDlb-Ghy0Hikl_w',
+      keyFile: `${__dirname}/client_secret.json`,
+      destination: `${__dirname}/content/media`,
+      exportGDocs: false,
+      exportMimeType: ''
+      }
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -55,10 +55,10 @@ module.exports = {
         worksheetTitle: 'list',
         credentials: require(`${__dirname}/client_secret.json`,),
         plugins: [
-          {
-            'gatsby-plugin-twitter',
-          }
+          'gatsby-plugin-twitter'
         ]
+
+
       }
 
 
